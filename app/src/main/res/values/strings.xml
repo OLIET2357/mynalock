@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">mynalock</string>
+    <string name="no_nfc">No NFC</string>
+    <string name="nfc_is_off">NFC is off</string>
 </resources>

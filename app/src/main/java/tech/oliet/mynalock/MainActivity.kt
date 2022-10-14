@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
         nfcAdapter?.enableReaderMode(
             this,
             this,
-            NfcAdapter.FLAG_READER_NFC_B or NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK, ,
+            NfcAdapter.FLAG_READER_NFC_B or NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK,
             null
         )
     }
