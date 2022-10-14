@@ -3,4 +3,5 @@
     <string name="app_name">マイナロック</string>
     <string name="no_nfc">NFCがありません</string>
     <string name="nfc_is_off">NFCがオフです</string>
+    <string name="lock_myna">マイナンバーカードをロックします</string>
 </resources>

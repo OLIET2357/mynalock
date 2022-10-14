@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
             AlertDialog.Builder(this)
                 .setTitle("Error")
                 .setMessage(getString(R.string.no_nfc))
+                .setCancelable(false)
                 .show()
             return
         }
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
             AlertDialog.Builder(this)
                 .setTitle("Error")
                 .setMessage(getString(R.string.nfc_is_off))
+                .setCancelable(false)
                 .show()
             return
         }
