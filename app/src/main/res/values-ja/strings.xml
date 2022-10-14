@@ -4,4 +4,6 @@
     <string name="no_nfc">NFCがありません</string>
     <string name="nfc_is_off">NFCがオフです</string>
     <string name="lock_myna">マイナンバーカードをロックします</string>
+    <string name="succeeded">成功</string>
+    <string name="failed">失敗</string>
 </resources>
