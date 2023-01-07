@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">マイナロック</string>
-    <string name="no_nfc">NFCがありません</string>
+    <string name="no_nfc">NFCが搭載されていません</string>
     <string name="nfc_is_off">NFCがオフです</string>
     <string name="lock_myna">マイナンバーカードをロックします</string>
     <string name="succeeded">成功</string>
