@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
     private val handler = Handler(Looper.getMainLooper())
     private var nfcAdapter: NfcAdapter? = null
 
+    private var lock: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +38,14 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
                 .show()
             return
         }
+
+        AlertDialog.Builder(this).apply {
+            setTitle(getString(R.string.warning))
+            setMessage(getString(R.string.warning_text))
+            setPositiveButton("OK") { _, _ -> lock = true }
+            setNegativeButton("NO") { _, _ -> finish() }
+            setCancelable(false)
+        }.show()
     }
 
     override fun onResume() {
@@ -58,8 +68,11 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
         val isoDep = IsoDep.get(tag)
         isoDep.connect()
 
-//        val result = lockmyna(isoDep)
-        val result = true
+        val result = if (lock) {
+            lockmyna(isoDep)
+        } else {
+            false
+        }
 
         isoDep.close()
 

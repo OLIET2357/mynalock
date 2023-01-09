@@ -2,6 +2,8 @@
     <string name="app_name">mynalock</string>
     <string name="no_nfc">No NFC</string>
     <string name="nfc_is_off">NFC is off</string>
+    <string name="warning">Warning</string>
+    <string name="warning_text">This app locks your Japanese My Number card</string>
     <string name="lock_myna">Lock my number card</string>
     <string name="result">Result</string>
     <string name="succeeded">Succeeded</string>
