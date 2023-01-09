@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
                 .show()
             return
         }
-
     }
 
     override fun onResume() {
@@ -60,20 +58,23 @@ class MainActivity : AppCompatActivity(), NfcAdapter.ReaderCallback {
         val isoDep = IsoDep.get(tag)
         isoDep.connect()
 
-        val result = lockmyna(isoDep)
+//        val result = lockmyna(isoDep)
+        val result = true
 
         isoDep.close()
 
         handler.post {
-            Toast.makeText(
-                this, if (result) {
-                    getString(R.string.succeeded)
-                } else {
-                    getString(R.string.failed)
-                }, Toast.LENGTH_LONG
-            ).show()
+            AlertDialog.Builder(this).apply {
+                setTitle(getString(R.string.result))
+                setMessage(
+                    if (result) {
+                        getString(R.string.succeeded)
+                    } else {
+                        getString(R.string.failed)
+                    }
+                )
+            }.show()
         }
-
     }
 
     private fun lockmyna(isoDep: IsoDep): Boolean {
